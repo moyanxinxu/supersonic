@@ -1,6 +1,5 @@
 target/
 .idea/
-.vscode/
 logs/
 log/
 *.DS_Store
@@ -21,3 +20,6 @@ __pycache__/
 /dict
 assembly/build/*-SNAPSHOT
 **/node_modules/
+.gitignore
+webapp/pnpm-lock.yaml
+webapp/package.json
