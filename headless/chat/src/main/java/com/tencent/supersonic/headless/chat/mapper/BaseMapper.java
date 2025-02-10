@@ -121,7 +121,7 @@ public abstract class BaseMapper implements SchemaMapper {
         return element.getAlias();
     }
 
-    public <T> List<T> getMatches(ChatQueryContext chatQueryContext, MatchStrategy matchStrategy) {
+    public <T> List<T> getMatches(ChatQueryContext chatQueryContext, MatchStrategy matchStrategy) { // matchStrategy是hanlp里边的东西
         String queryText = chatQueryContext.getRequest().getQueryText();
         List<S2Term> terms =
                 HanlpHelper.getTerms(queryText, chatQueryContext.getModelIdToDataSetIds());

@@ -22,13 +22,13 @@ import java.util.stream.Collectors;
 @Data
 public class ChatQueryContext implements Serializable {
 
-    private QueryNLReq request;
-    private Map<Long, List<Long>> modelIdToDataSetIds;
-    private List<SemanticQuery> candidateQueries = new ArrayList<>();
+    private QueryNLReq request; // 用户的输入与相关信息
+    private Map<Long, List<Long>> modelIdToDataSetIds; // 模型到数据集的映射，不同模型负责不同的数据集
+    private List<SemanticQuery> candidateQueries = new ArrayList<>(); // 暂时不知道
     private SchemaMapInfo mapInfo = new SchemaMapInfo();
     @JsonIgnore
-    private SemanticSchema semanticSchema;
-    private ChatWorkflowState chatWorkflowState;
+    private SemanticSchema semanticSchema; // 数据库的schema信息
+    private ChatWorkflowState chatWorkflowState; // 当天的工作流的状态
 
     public ChatQueryContext() {
         this(new QueryNLReq());

@@ -30,13 +30,15 @@ public abstract class BaseMatchStrategy<T extends MapResult> implements MatchStr
     @Override
     public Map<MatchText, List<T>> match(ChatQueryContext chatQueryContext, List<S2Term> terms,
             Set<Long> detectDataSetIds) {
-        String text = chatQueryContext.getRequest().getQueryText();
+        // chatQueryContext存储着请求的信息
+        String text = chatQueryContext.getRequest().getQueryText(); // 用户的输入
         if (Objects.isNull(terms) || StringUtils.isEmpty(text)) {
             return null;
         }
 
         log.debug("terms:{},,detectDataSetIds:{}", terms, detectDataSetIds);
 
+        // 一个匹配过程
         List<T> detects = detect(chatQueryContext, terms, detectDataSetIds);
         Map<MatchText, List<T>> result = new HashMap<>();
 

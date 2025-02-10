@@ -12,15 +12,15 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class User implements Serializable {
 
-    private Long id;
+    private Long id; // id
 
-    private String name;
+    private String name; // 用户名
 
-    private String displayName;
+    private String displayName; // 显示的名字
 
-    private String email;
+    private String email; // 邮箱
 
-    private Integer isAdmin;
+    private Integer isAdmin; // 是否为管理员
 
     public static User get(Long id, String name, String displayName, String email,
             Integer isAdmin) {

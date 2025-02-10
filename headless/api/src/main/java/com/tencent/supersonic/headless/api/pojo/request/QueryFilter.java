@@ -11,7 +11,7 @@ import java.io.Serializable;
 @ToString(callSuper = true)
 public class QueryFilter implements Serializable {
 
-    private String bizName;
+    private String bizName; // 
 
     private String name;
 
